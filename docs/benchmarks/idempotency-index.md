@@ -6,7 +6,7 @@ Costo de indexar `orders.idempotency_key` según el tipo de key, para deduplicar
 
 `idempotency_key uuid` derivada con UUID v5 de `{userId}:{key}`, con un unique parcial sobre esa sola columna.
 
-- Es la única variante que deduplica una key opaca del cliente y queda acotada por usuario.
+- Deduplica una key opaca del cliente, acotada por usuario, con un índice de una sola columna.
 - Con la tabla en 10M de filas, un insert cuesta 6 µs de mediana y 33 µs en p99; el chequeo de key, 6 µs y 40 µs.
 - UUID v7 es más rápido pero no se puede derivar de la key del cliente. El índice compuesto es más lento y más grande sin ventaja.
 

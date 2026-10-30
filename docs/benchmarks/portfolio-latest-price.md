@@ -39,5 +39,5 @@ Mediana de 11 ejecuciones por punto, escala logarítmica.
 ## Límites
 
 - El mercado real tiene 65 instrumentos: en la búsqueda, el costo de `LATERAL` está sobreestimado.
-- Caché caliente, sin red.
+- Cache caliente, sin red.
 - `marketdata` tiene hoy 2 días de datos: la mejora aplica cuando crezca el historial.
