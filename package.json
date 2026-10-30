@@ -1,0 +1,33 @@
+{
+  "name": "challenge-backend",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev:api": "npm run dev -w @challenge/api",
+    "dev:worker": "npm run dev -w @challenge/worker",
+    "migrate": "knex --knexfile packages/db/knexfile.js migrate:latest",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest run -c vitest.unit.config.mts",
+    "test:integration": "vitest run -c vitest.integration.config.mts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "migrate:rollback": "knex --knexfile packages/db/knexfile.js migrate:rollback",
+    "migrate:status": "knex --knexfile packages/db/knexfile.js migrate:list",
+    "migrate:make": "knex --knexfile packages/db/knexfile.js migrate:make"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "supertest": "^7.3.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  }
+}

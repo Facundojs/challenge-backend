@@ -1,0 +1,11 @@
+{
+  "name": "@challenge/db",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "@challenge/contracts": "*",
+    "knex": "^3.3.0",
+    "pg": "^8.23.1"
+  }
+}

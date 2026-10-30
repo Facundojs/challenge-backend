@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" role="img" aria-labelledby="t d">
+<title id="t">Inserciones por segundo según el tamaño de la tabla</title>
+<desc id="d">Con uuid v7 el throughput se mantiene cerca de 750 mil filas por segundo. Con uuid aleatorio baja de 500 mil a unas 150 mil. El índice compuesto cae de forma parecida pero más abajo.</desc>
+<style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7; --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; }
+@media (prefers-color-scheme: dark) { svg { --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --grid:#2c2c2a; --axis:#383835; --s1:#3987e5; --s2:#d95926; --s3:#199e70; } }
+.bg { fill: var(--surface); }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.axis { stroke: var(--axis); stroke-width: 1; }
+.tick { fill: var(--muted); font-size: 12px; }
+.ax { fill: var(--ink2); font-size: 12px; }
+.line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.ref { stroke: var(--muted); } .s1 { stroke: var(--s1); } .s2 { stroke: var(--s2); } .s3 { stroke: var(--s3); }
+.lbl, .leg { fill: var(--ink); font-size: 12px; }
+</style>
+<rect class="bg" width="760" height="430"/>
+<g transform="translate(64 22)"><line class="line ref" stroke-dasharray="5 4" x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">Sin índice</text></g>
+<g transform="translate(182 22)"><line class="line s2"  x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">uuid v7</text></g>
+<g transform="translate(280.2 22)"><line class="line s1"  x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">uuid aleatorio (v5)</text></g>
+<g transform="translate(457.59999999999997 22)"><line class="line s3"  x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">(userid, uuid)</text></g>
+<line class="grid" x1="64" x2="620" y1="374" y2="374"/>
+<text class="tick" x="56" y="378" text-anchor="end">0</text>
+<line class="grid" x1="64" x2="620" y1="328.5714285714286" y2="328.5714285714286"/>
+<text class="tick" x="56" y="332.5714285714286" text-anchor="end">200</text>
+<line class="grid" x1="64" x2="620" y1="283.1428571428571" y2="283.1428571428571"/>
+<text class="tick" x="56" y="287.1428571428571" text-anchor="end">400</text>
+<line class="grid" x1="64" x2="620" y1="237.7142857142857" y2="237.7142857142857"/>
+<text class="tick" x="56" y="241.7142857142857" text-anchor="end">600</text>
+<line class="grid" x1="64" x2="620" y1="192.2857142857143" y2="192.2857142857143"/>
+<text class="tick" x="56" y="196.2857142857143" text-anchor="end">800</text>
+<line class="grid" x1="64" x2="620" y1="146.85714285714283" y2="146.85714285714283"/>
+<text class="tick" x="56" y="150.85714285714283" text-anchor="end">1000</text>
+<line class="grid" x1="64" x2="620" y1="101.42857142857144" y2="101.42857142857144"/>
+<text class="tick" x="56" y="105.42857142857144" text-anchor="end">1200</text>
+<line class="grid" x1="64" x2="620" y1="56" y2="56"/>
+<text class="tick" x="56" y="60" text-anchor="end">1400</text>
+<text class="tick" x="64" y="392" text-anchor="middle">0</text>
+<text class="tick" x="175.2" y="392" text-anchor="middle">2</text>
+<text class="tick" x="286.4" y="392" text-anchor="middle">4</text>
+<text class="tick" x="397.59999999999997" y="392" text-anchor="middle">6</text>
+<text class="tick" x="508.8" y="392" text-anchor="middle">8</text>
+<text class="tick" x="620" y="392" text-anchor="middle">10</text>
+<line class="axis" x1="64" x2="620" y1="374" y2="374"/>
+<path class="line ref" stroke-dasharray="5 4" d="M91.8 79.2 L119.6 75.5 L147.4 119.1 L175.2 136.2 L203.0 150.0 L230.8 111.9 L258.6 107.4 L286.4 100.9 L314.2 136.5 L342.0 136.9 L369.8 136.3 L397.6 104.0 L425.4 103.9 L453.2 144.3 L481.0 172.3 L508.8 195.5 L536.6 155.4 L564.4 154.3 L592.2 132.3 L620.0 153.7"/>
+<path class="line s2"  d="M91.8 195.3 L119.6 193.8 L147.4 196.5 L175.2 221.5 L203.0 224.3 L230.8 225.1 L258.6 226.0 L286.4 228.2 L314.2 245.4 L342.0 222.0 L369.8 238.6 L397.6 236.7 L425.4 237.2 L453.2 220.8 L481.0 225.7 L508.8 223.5 L536.6 244.6 L564.4 224.4 L592.2 226.8 L620.0 205.6"/>
+<path class="line s1"  d="M91.8 259.0 L119.6 275.3 L147.4 283.7 L175.2 302.8 L203.0 294.9 L230.8 307.3 L258.6 292.7 L286.4 312.5 L314.2 307.2 L342.0 313.4 L369.8 308.3 L397.6 324.2 L425.4 333.3 L453.2 335.0 L481.0 328.3 L508.8 329.5 L536.6 321.3 L564.4 330.7 L592.2 336.1 L620.0 349.6"/>
+<path class="line s3"  d="M91.8 265.0 L119.6 280.0 L147.4 297.3 L175.2 314.7 L203.0 306.8 L230.8 308.2 L258.6 296.0 L286.4 315.8 L314.2 316.8 L342.0 331.3 L369.8 330.8 L397.6 335.6 L425.4 334.0 L453.2 335.5 L481.0 338.7 L508.8 346.6 L536.6 345.7 L564.4 343.4 L592.2 344.3 L620.0 343.7"/>
+<text class="lbl reft" x="630" y="157.71168964285712">Sin índice</text>
+<text class="lbl s2t" x="630" y="209.55074357142857">uuid v7</text>
+<text class="lbl s3t" x="630" y="347.67483857142855">(userid, uuid)</text>
+<text class="lbl s1t" x="630" y="365.67483857142855">uuid aleatorio (v5)</text>
+<text class="ax" x="342" y="418" text-anchor="middle">Filas en la tabla (millones)</text>
+<text class="ax" transform="translate(16 215) rotate(-90)" text-anchor="middle">Inserciones por segundo (miles)</text>
+</svg>

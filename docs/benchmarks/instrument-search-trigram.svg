@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" role="img" aria-labelledby="t d">
+<title id="t">Tiempo de la búsqueda de instrumentos según el tamaño de la tabla</title>
+<desc id="d">Con un término de 3 letras, la búsqueda sin índice pasa de 0,03 ms con 65 instrumentos a 131 ms con un millón, y con pg_trgm queda en 0,39 ms. Con un término de 2 letras el índice no se usa y ambos tiempos son iguales. Escala logarítmica.</desc>
+<style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7; --s1:#2a78d6; --s2:#eb6834; }
+@media (prefers-color-scheme: dark) { svg { --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --grid:#2c2c2a; --axis:#383835; --s1:#3987e5; --s2:#d95926; } }
+.bg { fill: var(--surface); }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.axis { stroke: var(--axis); stroke-width: 1; }
+.tick { fill: var(--muted); font-size: 11px; }
+.ax { fill: var(--ink2); font-size: 12px; }
+.title { fill: var(--ink); font-size: 13px; font-weight: 600; }
+.line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.s1 { stroke: var(--s1); } .s2 { stroke: var(--s2); }
+.s1f { fill: var(--s1); stroke: var(--surface); stroke-width: 2; } .s2f { fill: var(--s2); stroke: var(--surface); stroke-width: 2; }
+.val, .leg { fill: var(--ink); font-size: 12px; }
+.s1b { fill: var(--s1); } .s2b { fill: var(--s2); }
+</style>
+<rect class="bg" width="820" height="420"/>
+<g transform="translate(62 18)"><line class="line s2" x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">Sin índice</text></g>
+<g transform="translate(188 18)"><line class="line s1" x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">pg_trgm</text></g>
+<text class="ax" x="808" y="22" text-anchor="end">escala logarítmica</text>
+<text class="title" x="62" y="44">Término de 3 letras</text>
+<line class="grid" x1="62" x2="348" y1="356" y2="356"/><text class="tick" x="54" y="360" text-anchor="end">0,01 ms</text><line class="grid" x1="62" x2="348" y1="300.4" y2="300.4"/><text class="tick" x="54" y="304.4" text-anchor="end">0,1 ms</text><line class="grid" x1="62" x2="348" y1="244.79999999999998" y2="244.79999999999998"/><text class="tick" x="54" y="248.79999999999998" text-anchor="end">1 ms</text><line class="grid" x1="62" x2="348" y1="189.2" y2="189.2"/><text class="tick" x="54" y="193.2" text-anchor="end">10 ms</text><line class="grid" x1="62" x2="348" y1="133.6" y2="133.6"/><text class="tick" x="54" y="137.6" text-anchor="end">100 ms</text><line class="grid" x1="62" x2="348" y1="78" y2="78"/><text class="tick" x="54" y="82" text-anchor="end">1000 ms</text><text class="tick" x="76" y="376" text-anchor="middle">65</text><text class="tick" x="161.33333333333331" y="376" text-anchor="middle">10 mil</text><text class="tick" x="246.66666666666666" y="376" text-anchor="middle">100 mil</text><text class="tick" x="332" y="376" text-anchor="middle">1 M</text><line class="axis" x1="62" x2="348" y1="356" y2="356"/>
+<text class="ax" x="205" y="406" text-anchor="middle">Instrumentos en la tabla</text>
+<path class="line s2" d="M76.0 326.4 L161.3 217.0 L246.7 161.9 L332.0 127.0"/><circle class="dot s2f" cx="76.0" cy="326.4" r="4"/><circle class="dot s2f" cx="161.3" cy="217.0" r="4"/><circle class="dot s2f" cx="246.7" cy="161.9" r="4"/><circle class="dot s2f" cx="332.0" cy="127.0" r="4"/><path class="line s1" d="M76.0 328.7 L161.3 353.7 L246.7 323.1 L332.0 267.8"/><circle class="dot s1f" cx="76.0" cy="328.7" r="4"/><circle class="dot s1f" cx="161.3" cy="353.7" r="4"/><circle class="dot s1f" cx="246.7" cy="323.1" r="4"/><circle class="dot s1f" cx="332.0" cy="267.8" r="4"/><rect class="sw s2b" x="342" y="123.04803259653326" width="8" height="8" rx="1.5"/><text class="val" x="355" y="131.04803259653326">131 ms</text>
+<rect class="sw s1b" x="342" y="263.7857458602504" width="8" height="8" rx="1.5"/><text class="val" x="355" y="271.7857458602504">0,39 ms</text>
+<text class="title" x="472" y="44">Término de 2 letras</text>
+<line class="grid" x1="472" x2="758" y1="356" y2="356"/><text class="tick" x="464" y="360" text-anchor="end">0,01 ms</text><line class="grid" x1="472" x2="758" y1="300.4" y2="300.4"/><text class="tick" x="464" y="304.4" text-anchor="end">0,1 ms</text><line class="grid" x1="472" x2="758" y1="244.79999999999998" y2="244.79999999999998"/><text class="tick" x="464" y="248.79999999999998" text-anchor="end">1 ms</text><line class="grid" x1="472" x2="758" y1="189.2" y2="189.2"/><text class="tick" x="464" y="193.2" text-anchor="end">10 ms</text><line class="grid" x1="472" x2="758" y1="133.6" y2="133.6"/><text class="tick" x="464" y="137.6" text-anchor="end">100 ms</text><line class="grid" x1="472" x2="758" y1="78" y2="78"/><text class="tick" x="464" y="82" text-anchor="end">1000 ms</text><text class="tick" x="486" y="376" text-anchor="middle">65</text><text class="tick" x="571.3333333333334" y="376" text-anchor="middle">10 mil</text><text class="tick" x="656.6666666666666" y="376" text-anchor="middle">100 mil</text><text class="tick" x="742" y="376" text-anchor="middle">1 M</text><line class="axis" x1="472" x2="758" y1="356" y2="356"/>
+<text class="ax" x="615" y="406" text-anchor="middle">Instrumentos en la tabla</text>
+<path class="line s2" d="M486.0 329.5 L571.3 217.0 L656.7 162.5 L742.0 127.5"/><circle class="dot s2f" cx="486.0" cy="329.5" r="4"/><circle class="dot s2f" cx="571.3" cy="217.0" r="4"/><circle class="dot s2f" cx="656.7" cy="162.5" r="4"/><circle class="dot s2f" cx="742.0" cy="127.5" r="4"/><path class="line s1" d="M486.0 327.9 L571.3 217.4 L656.7 162.5 L742.0 126.9"/><circle class="dot s1f" cx="486.0" cy="327.9" r="4"/><circle class="dot s1f" cx="571.3" cy="217.4" r="4"/><circle class="dot s1f" cx="656.7" cy="162.5" r="4"/><circle class="dot s1f" cx="742.0" cy="126.9" r="4"/><rect class="sw s1b" x="752" y="122.92995523071333" width="8" height="8" rx="1.5"/><text class="val" x="765" y="130.92995523071335">132 ms</text>
+<rect class="sw s2b" x="752" y="137.92995523071335" width="8" height="8" rx="1.5"/><text class="val" x="765" y="145.92995523071335">129 ms</text>
+</svg>

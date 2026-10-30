@@ -1,0 +1,25 @@
+# api y worker son servicios independientes: se escalan y despliegan por separado.
+# Uso:  docker compose up --build            (API :3000 + 1 worker)
+#       docker compose up --scale worker=3   (3 workers compitiendo por cuentas)
+x-app: &app
+  build: .
+  env_file: .env
+
+services:
+  migrate:
+    <<: *app
+    command: npm run migrate
+    restart: "no"
+
+  api:
+    <<: *app
+    command: npm run start -w @challenge/api
+    ports: ["3000:3000"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  worker:
+    <<: *app
+    command: npm run start -w @challenge/worker
+    depends_on:
+      migrate: { condition: service_completed_successfully }

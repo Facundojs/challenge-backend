@@ -1,0 +1,15 @@
+{
+  "name": "@challenge/worker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts"
+  },
+  "dependencies": {
+    "@challenge/contracts": "*",
+    "@challenge/db": "*",
+    "@types/pg": "^8.23.1",
+    "pg": "^8.23.1"
+  }
+}

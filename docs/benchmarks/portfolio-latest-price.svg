@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 420" role="img" aria-labelledby="t d">
+<title id="t">Tiempo de la consulta de último precio según el tamaño de marketdata</title>
+<desc id="d">Con DISTINCT ON sobre toda la tabla, el portfolio pasa de 0,75 ms a 66 ms y la búsqueda de 34 ms a 1,9 s al crecer marketdata de 100 mil a 10 millones de filas. Con LATERAL quedan en 0,12 ms y entre 1,7 y 2,8 ms. Escala logarítmica.</desc>
+<style>
+svg { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; --surface:#fcfcfb; --ink:#0b0b0b; --ink2:#52514e; --muted:#898781; --grid:#e1e0d9; --axis:#c3c2b7; --s1:#2a78d6; --s2:#eb6834; }
+@media (prefers-color-scheme: dark) { svg { --surface:#1a1a19; --ink:#f0efec; --ink2:#c3c2b7; --grid:#2c2c2a; --axis:#383835; --s1:#3987e5; --s2:#d95926; } }
+.bg { fill: var(--surface); }
+.grid { stroke: var(--grid); stroke-width: 1; }
+.axis { stroke: var(--axis); stroke-width: 1; }
+.tick { fill: var(--muted); font-size: 11px; }
+.ax { fill: var(--ink2); font-size: 12px; }
+.title { fill: var(--ink); font-size: 13px; font-weight: 600; }
+.line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.s1 { stroke: var(--s1); } .s2 { stroke: var(--s2); }
+.s1f { fill: var(--s1); stroke: var(--surface); stroke-width: 2; } .s2f { fill: var(--s2); stroke: var(--surface); stroke-width: 2; }
+.val, .leg { fill: var(--ink); font-size: 12px; }
+</style>
+<rect class="bg" width="820" height="420"/>
+<g transform="translate(62 18)"><line class="line s2" x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">DISTINCT ON (antes)</text></g>
+<g transform="translate(249.2 18)"><line class="line s1" x1="0" x2="22" y1="0" y2="0"/><text class="leg" x="30" y="4">LATERAL (ahora)</text></g>
+<text class="ax" x="808" y="22" text-anchor="end">escala logarítmica</text>
+<text class="title" x="62" y="44">Portfolio (20 posiciones)</text>
+<line class="grid" x1="62" x2="348" y1="356" y2="356"/><text class="tick" x="54" y="360" text-anchor="end">0,1 ms</text><line class="grid" x1="62" x2="348" y1="300.4" y2="300.4"/><text class="tick" x="54" y="304.4" text-anchor="end">1 ms</text><line class="grid" x1="62" x2="348" y1="244.79999999999998" y2="244.79999999999998"/><text class="tick" x="54" y="248.79999999999998" text-anchor="end">10 ms</text><line class="grid" x1="62" x2="348" y1="189.2" y2="189.2"/><text class="tick" x="54" y="193.2" text-anchor="end">100 ms</text><line class="grid" x1="62" x2="348" y1="133.6" y2="133.6"/><text class="tick" x="54" y="137.6" text-anchor="end">1 s</text><line class="grid" x1="62" x2="348" y1="78" y2="78"/><text class="tick" x="54" y="82" text-anchor="end">10 s</text><text class="tick" x="76" y="376" text-anchor="middle">100 mil</text><text class="tick" x="140" y="376" text-anchor="middle">300 mil</text><text class="tick" x="204" y="376" text-anchor="middle">1 M</text><text class="tick" x="268" y="376" text-anchor="middle">3 M</text><text class="tick" x="332" y="376" text-anchor="middle">10 M</text><line class="axis" x1="62" x2="348" y1="356" y2="356"/>
+<text class="ax" x="205" y="406" text-anchor="middle">Filas en marketdata</text>
+<path class="line s2" d="M76.0 307.3 L140.0 288.6 L204.0 255.1 L268.0 239.0 L332.0 199.3"/><circle class="dot s2f" cx="76.0" cy="307.3" r="4"/><circle class="dot s2f" cx="140.0" cy="288.6" r="4"/><circle class="dot s2f" cx="204.0" cy="255.1" r="4"/><circle class="dot s2f" cx="268.0" cy="239.0" r="4"/><circle class="dot s2f" cx="332.0" cy="199.3" r="4"/><text class="val s2t" x="342" y="203.28793198023203">66 ms</text>
+<path class="line s1" d="M76.0 355.3 L140.0 353.5 L204.0 352.4 L268.0 352.0 L332.0 350.8"/><circle class="dot s1f" cx="76.0" cy="355.3" r="4"/><circle class="dot s1f" cx="140.0" cy="353.5" r="4"/><circle class="dot s1f" cx="204.0" cy="352.4" r="4"/><circle class="dot s1f" cx="268.0" cy="352.0" r="4"/><circle class="dot s1f" cx="332.0" cy="350.8" r="4"/><text class="val s1t" x="342" y="354.80575430497976">0,12 ms</text>
+<text class="title" x="472" y="44">Búsqueda que coincide con todos los instrumentos</text>
+<line class="grid" x1="472" x2="758" y1="356" y2="356"/><text class="tick" x="464" y="360" text-anchor="end">0,1 ms</text><line class="grid" x1="472" x2="758" y1="300.4" y2="300.4"/><text class="tick" x="464" y="304.4" text-anchor="end">1 ms</text><line class="grid" x1="472" x2="758" y1="244.79999999999998" y2="244.79999999999998"/><text class="tick" x="464" y="248.79999999999998" text-anchor="end">10 ms</text><line class="grid" x1="472" x2="758" y1="189.2" y2="189.2"/><text class="tick" x="464" y="193.2" text-anchor="end">100 ms</text><line class="grid" x1="472" x2="758" y1="133.6" y2="133.6"/><text class="tick" x="464" y="137.6" text-anchor="end">1 s</text><line class="grid" x1="472" x2="758" y1="78" y2="78"/><text class="tick" x="464" y="82" text-anchor="end">10 s</text><text class="tick" x="486" y="376" text-anchor="middle">100 mil</text><text class="tick" x="550" y="376" text-anchor="middle">300 mil</text><text class="tick" x="614" y="376" text-anchor="middle">1 M</text><text class="tick" x="678" y="376" text-anchor="middle">3 M</text><text class="tick" x="742" y="376" text-anchor="middle">10 M</text><line class="axis" x1="472" x2="758" y1="356" y2="356"/>
+<text class="ax" x="615" y="406" text-anchor="middle">Filas en marketdata</text>
+<path class="line s2" d="M486.0 215.1 L550.0 194.8 L614.0 174.4 L678.0 148.9 L742.0 118.1"/><circle class="dot s2f" cx="486.0" cy="215.1" r="4"/><circle class="dot s2f" cx="550.0" cy="194.8" r="4"/><circle class="dot s2f" cx="614.0" cy="174.4" r="4"/><circle class="dot s2f" cx="678.0" cy="148.9" r="4"/><circle class="dot s2f" cx="742.0" cy="118.1" r="4"/><text class="val s2t" x="752" y="122.1407038695906">1,9 s</text>
+<path class="line s1" d="M486.0 287.2 L550.0 278.7 L614.0 276.7 L678.0 276.5 L742.0 275.2"/><circle class="dot s1f" cx="486.0" cy="287.2" r="4"/><circle class="dot s1f" cx="550.0" cy="278.7" r="4"/><circle class="dot s1f" cx="614.0" cy="276.7" r="4"/><circle class="dot s1f" cx="678.0" cy="276.5" r="4"/><circle class="dot s1f" cx="742.0" cy="275.2" r="4"/><text class="val s1t" x="752" y="279.16151468159023">2,8 ms</text>
+</svg>

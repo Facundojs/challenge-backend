@@ -1,0 +1,33 @@
+### Requests de ejemplo (extensión "REST Client" de VS Code, o IntelliJ HTTP Client)
+@host = http://localhost:3000
+
+### Portfolio del usuario 1
+GET {{host}}/users/1/portfolio
+
+### Buscar activos por ticker o nombre
+GET {{host}}/instruments?q=mol
+
+### MARKET BUY por cantidad
+POST {{host}}/orders
+Content-Type: application/json
+
+{ "userId": 1, "instrumentId": 47, "side": "BUY", "type": "MARKET", "size": 10 }
+
+### MARKET BUY por monto en pesos (compra el máximo de acciones enteras)
+POST {{host}}/orders
+Content-Type: application/json
+
+{ "userId": 1, "instrumentId": 47, "side": "BUY", "type": "MARKET", "amount": 10000 }
+
+### LIMIT SELL (queda NEW)
+POST {{host}}/orders
+Content-Type: application/json
+
+{ "userId": 1, "instrumentId": 47, "side": "SELL", "type": "LIMIT", "size": 5, "price": 1000 }
+
+### MARKET BUY idempotente: repetir este request devuelve la misma orden (200, header Idempotency-Replayed)
+POST {{host}}/orders
+Content-Type: application/json
+Idempotency-Key: compra-001
+
+{ "userId": 1, "instrumentId": 47, "side": "BUY", "type": "MARKET", "size": 10 }
